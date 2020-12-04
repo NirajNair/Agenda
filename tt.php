@@ -1,13 +1,13 @@
 <?php
 session_start();
 // include 'insert.php';
+include_once 'db.php';
  
 if(!isset($_SESSION['email'])){
     $error3 = "<div class='alert alert-danger'>Login to Proceed</div>";
     header('Location: login.php?error='.$error3);
     exit;
 } else {
-$db = mysqli_connect('localhost', 'root', '', 'agenda')  or die("Could not connect to the database");
 
     $tableName = $_SESSION['tableName'];
 

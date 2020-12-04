@@ -1,9 +1,9 @@
 <?php 
 
 session_start();
+include_once 'db.php';
 $error = "";
 $password ="";
-$db = mysqli_connect('localhost', 'root', '', 'agenda')  or die("Could not connect to the database");
 if(isset($_POST['submit'])){
     if(isset($_GET['id'])){
         $password1 = mysqli_real_escape_string($db, $_POST['pass1']);
@@ -46,24 +46,40 @@ if(isset($_POST['submit'])){
                     <h4>Change Password</h4>
                 </div>
             </header>
-        <div class="confirmForm" >
-            <form method="post" style=": center">   
-                <?php echo $error;?>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="confirmInput" placeholder="New Password" name="pass1" required>
-                    <input type="checkbox" onclick="myFunction()">Show Password</input>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="confirmInput" placeholder="Confirm Password" name="pass2"  required>
-                </div>
-                <div id="message">
-                        <h6 id="checkPass" class="invalid" style=" font-size: 15px;">Password must contain a <b>lowercase</b>, an <b>uppercase</b>, a <b>number</b> and total <b>8 characters</b>.</h6>                       
-                </div>
-                <button class="btn btn-secondary" type="submit" name="submit">submit</button>
-            </form>
+            <!-- <div class="confirmForm" style="margin-top: 30px; margin-bottom: 20px;">
+                <form method="post" >   
+                    <?php echo $error;?>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="confirmInput" placeholder="New Password" name="pass1" required>
+                        <input type="checkbox" onclick="myFunction()">Show Password</input>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="confirmInput" placeholder="Confirm Password" name="pass2"  required>
+                    </div>
+                    <div id="message">
+                            <h6 id="checkPass" class="invalid" style=" font-size: 15px;">Password must contain a <b>lowercase</b>, an <b>uppercase</b>, a <b>number</b> and total <b>8 characters</b>.</h6>                       
+                    </div>
+                    <button class="btn btn-secondary" type="submit" name="submit">submit</button>
+                </form>
+            </div> -->
+
+            <div class="row">
+            <div class="col-xl-6 col-lg-7 col-md-8" style="margin: 30px auto;">
+                <form method="post">
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="confirmInput" placeholder="New Password" name="pass1" required>
+                        <input type="checkbox" onclick="myFunction()">Show Password</input>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="confirmInput" placeholder="Confirm Password" name="pass2"  required>
+                    </div>
+                    <button type="submit" name="submit" class="btn">Submit</button>
+                </form>
+                <hr style="border: 0.5px white solid">
+                
+            </div>
         </div>
-        
-            <footer style="background-color: transparent; padding-bottom: 30px;">
+            <footer style="background-color: transparent; padding-top: 450px;">
                 <div class="container" style="text-align: center; padding-top: 20px;">
                     <h5>Made By</h5>
                 </div>

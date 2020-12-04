@@ -1,10 +1,11 @@
 <?php 
+use PHPMailer\PHPMailer\PHPMailer;
 
 session_start();
 $error = "";
 $successAlert ="";
-$db = mysqli_connect('localhost', 'root', '', 'agenda')  or die("Could not connect to the database");
 if(isset($_POST['send'])){
+    include_once 'db.php';
     $recoverEmail = mysqli_real_escape_string($db, $_POST['email']);
 
     $checkQuery = "SELECT * FROM user where email='$recoverEmail'";
@@ -14,13 +15,36 @@ if(isset($_POST['send'])){
         $userData = mysqli_fetch_assoc($query);
         $firstName = $userData['firstName'];
         $id = $userData['id'];
+
+        require_once "PHPMailer/PHPMailer.php";
+        require_once "PHPMailer/SMTP.php";
+        require_once "PHPMailer/Exception.php";
+
+        $mail = new PHPMailer();
+
+        //smtp settings
+        $mail->isSMTP();
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->Username = "nirajnknair@gmail.com";
+        $mail->Password = '*Niraj0995';
+        $mail->Port = 465;
+        $mail->SMTPSecure = "ssl";
+
         $subject = "Reset Password";
         $body = "Hi, $firstName. Click on the following link to reset your password. 
         http://localhost/Agenda/resetPassword.php?id=$id";
+
+        //email settings
+        $mail->isHTML(true);
+        $mail->setFrom($recoverEmail, "Agenda");
+        $mail->addAddress("nirajnknair@gmail.com");
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+
         $sender = "From: nirajnknair@gmail.com";
-        if(mail($recoverEmail, $subject, $body, $sender)){
-            $successAlert ="<div class='alert alert-success'>Please check your inbox.</div>";
-            header('location: login.php?msg=Password updated. Please check your inbox.');
+        if($mail->send()){
+            header('location: login.php?msg=Please check your inbox.');
         }else{
             $error.="<div class='alert alert-danger'>There is some error. Please try again later.</div>";
         }

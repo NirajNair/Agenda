@@ -1,8 +1,8 @@
 <?php
 session_start();
+include_once '../db.php';
 if(isset($_POST['id'])){
 
-    $db = mysqli_connect('localhost', 'root', '', 'agenda')  or die("Could not connect to the database");
 
     $id = $_POST['id'];
     $calendar = $_POST['calendar'];

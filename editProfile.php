@@ -1,10 +1,11 @@
 <?php 
 session_start();
+include_once 'db.php';
 
 $password = "";
 
 $errors1 = "";
-$db = mysqli_connect('localhost', 'root', '', 'agenda')  or die("Could not connect to the database");
+$errors2 = "";
 
 $checkEmail = $_SESSION['email'];
 

@@ -1,6 +1,7 @@
 <?php 
 
 session_start();
+include_once '../db.php';
 
 if(isset($_POST['val'])){
 
@@ -9,8 +10,6 @@ if(isset($_POST['val'])){
     $_SESSION['group_arr'] = array();
 
     $val = $_POST['val'];
-
-    $db = mysqli_connect('localhost', 'root', '', 'agenda')  or die("Could not connect to the database");
     
     $tableName = $_SESSION['tableName'];
     

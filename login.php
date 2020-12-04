@@ -1,12 +1,12 @@
 <?php 
 session_start();
+include_once 'db.php';
 
 $password = "";
 $modalshow= "";
 $errors1 = "";
 $errors3="";
 $respMsg = "";
-$db = mysqli_connect('localhost', 'root', '', 'agenda')  or die("Could not connect to the database");
 
 if (isset($_POST['signup'])){
     $modalshow = "<script type='text/javascript'>
