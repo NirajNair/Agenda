@@ -37,8 +37,8 @@ if(isset($_POST['send'])){
 
         //email settings
         $mail->isHTML(true);
-        $mail->setFrom($recoverEmail, "Agenda");
-        $mail->addAddress("nirajnknair@gmail.com");
+        $mail->setFrom('nirajnknair@gmail.com', "Agenda");
+        $mail->addAddress($recoverEmail);
         $mail->Subject = $subject;
         $mail->Body = $body;
 
