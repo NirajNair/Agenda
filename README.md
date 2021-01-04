@@ -12,8 +12,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![](images/main.jpeg)
-![](images/main-zoomed.jpeg)
+![](images/main.jpg)
+![](images/main-zoomed.jpg)
 
 Agenda can help you be more productive and maintain adequate work-life balance by:
 
