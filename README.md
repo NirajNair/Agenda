@@ -18,7 +18,9 @@
 Agenda can help you be more productive and maintain adequate work-life balance by:
 
 •	Maintaining weekly Goals
+
 •	Add personal commitments as appointments
+
 •	Increase productivity with weekly overview
 
 The project is a prototype of what I want to achieve. If you wish like contributing please contact me on any of the links mentioned below with your ideas.
