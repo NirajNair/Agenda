@@ -23,9 +23,9 @@ Agenda can help you be more productive and maintain adequate work-life balance b
 
 The project is a prototype of what I want to achieve. If you wish like contributing please contact me on any of the links mentioned below with your ideas.
 
-### Languages: Php, Javascript
+#### Languages: Php, Javascript
 
-### Libraries: jQuery, Ajax
+#### Libraries: jQuery, Ajax
 
 ### Frameworks and plugins
 
@@ -38,6 +38,7 @@ The project is a prototype of what I want to achieve. If you wish like contribut
 ## Contact
 
 Niraj Nair - [@NairNiraj](https://twitter.com/NairNiraj) - nirajnknair@gmail.com
+
 Shourya Shrivastava - shouryashri14@gmail.com
 
 Project Link: [Agenda](http://agenda.rf.gd/)
