@@ -50,21 +50,6 @@ if (isset($_POST['signup'])){
                 VALUES ('$firstName', '$lastName', '$email', '$password', '$table_name')";
         mysqli_query($db, $query);
 
-          
-        // $insert_table_name = "INSERT INTO user () VALUES '$table_name')";
-        // mysqli_query($db,$insert_table_name);
-        
-        // $creating_table = "CREATE TABLE kabirbehenkaloda (
-                        //   id INT(100) AUTO_INCREMENT PRIMARY KEY,
-                        //   title VARCHAR(100) NOT NULL,
-                        //   calendar VARCHAR(100) NOT NULL,
-                        //   group VARCHAR(100) NOT NULL,
-                        //   color VARCHAR(100) NOT NULL,
-                        //   start_event DATETIME NOT NULL,
-                        //   end_event DATETIME NOT NULL,
-                        //   descs VARCHAR(100) NOT NULL
-        //                   )";
-
         $creating_table = "CREATE TABLE $table_name (
             event_id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             title VARCHAR(100) NOT NULL,
@@ -75,15 +60,7 @@ if (isset($_POST['signup'])){
             end_event DATETIME,
             descs VARCHAR(100) NOT NULL
             )";
-            // $creating_table = "CREATE TABLE $table_name (
-            //     event_id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            //     title VARCHAR(100) NOT NULL,
-            //     calendar VARCHAR(100) NOT NULL,
-            //     group VARCHAR(100) NOT NULL,
-            //      TEXT NULL,
-            //     date DATE NOT NULL
-            //     )";
-        
+           
         mysqli_query($db, $creating_table);
 
         
