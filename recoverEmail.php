@@ -26,8 +26,8 @@ if(isset($_POST['send'])){
         $mail->isSMTP();
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
-        $mail->Username = "nirajnknair@gmail.com";
-        $mail->Password = '*Niraj0995';
+        $mail->Username = "###@####.com";
+        $mail->Password = '####';
         $mail->Port = 465;
         $mail->SMTPSecure = "ssl";
 
@@ -37,12 +37,12 @@ if(isset($_POST['send'])){
 
         //email settings
         $mail->isHTML(true);
-        $mail->setFrom('nirajnknair@gmail.com', "Agenda");
+        $mail->setFrom('##@##.com', "Agenda");
         $mail->addAddress($recoverEmail);
         $mail->Subject = $subject;
         $mail->Body = $body;
 
-        $sender = "From: nirajnknair@gmail.com";
+        $sender = "From: ##@##.com";
         if($mail->send()){
             header('location: login.php?msg=Please check your inbox.');
         }else{
